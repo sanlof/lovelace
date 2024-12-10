@@ -23,7 +23,7 @@
                 <h3>Rooms & Suites</h3>
                 <h2>Find Your Sanctuary</h2>
                 <p></p>
-                <p><a href="rooms.html" class="cta">View Rooms</a></p>
+                <p><a href="rooms.php" class="cta">View Rooms</a></p>
             </section>
             <img src="images/room10.jpeg" class="bg" alt="" />
         </div>
@@ -35,7 +35,7 @@
                 <h2>Fancy a Bite?</h2>
                 <p>Regardless of wether you prefer to sink your teeth directly into warm flesh or rather savour your meal out of a fancy crystal glass, our blood-bags are trained to be gentle, tasteful and discreet.</p>
                 <p>We also offer synthetic blood in the form of the somewhat tolerable Tru:Blood.</p>
-                <p><a href="food.html" class="cta">Learn more</a></p>
+                <p><a href="food.php" class="cta">Learn more</a></p>
             </section>
             <img src="images/restaurant8.jpeg" alt="" />
         </div>
@@ -46,7 +46,7 @@
                 <h3>Experiences</h3>
                 <h2>Treatments & Activities</h2>
                 <p>Vampires of the modern times know, that even though it might not alter one's already perfect complextion, exercise and other treatments are still important to stay in shape and look one's best. We offer a variety of activities and experiences that aim to fill the soulless inner void.</p>
-                <p><a href="treats.html" class="cta">Explore</a></p>
+                <p><a href="treats.php" class="cta">Explore</a></p>
             </section>
             <img src="images/spa2.png" class="bg" id="exp" alt="" />
         </div>
