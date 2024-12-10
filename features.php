@@ -6,7 +6,7 @@
 </section>
 <a href="#explore" class="cta">Explore</a>
 </header>
-<main id="exp">
+<main>
     <article id="explore">
         <div class="inner-wrapper grid">
             <section>
@@ -40,7 +40,7 @@
             <img src="images/stake3.jpeg" alt="" />
         </div>
     </article>
-    <article id="exp-2">
+    <article id="experiences">
         <div class="inner-wrapper flex">
             <section>
                 <h3>Fitness</h3>
@@ -84,7 +84,7 @@
             <img src="images/therapy2.jpeg" alt="" />
         </div>
     </article>
-    <article id="exp-2">
+    <article id="exp">
         <div class="inner-wrapper flex">
             <section>
                 <h3>Little Ones</h3>
