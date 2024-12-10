@@ -52,7 +52,7 @@
         </div>
     </article>
     <article id="features">
-        <div class="inner-wrapper grid">
+        <div class="inner-wrapper grid-3">
             <section>
                 <img src="images/icons/check-circle.svg" alt="" class="feature-icon-1" />
                 <h3>Bask in the Sun</h3>
