@@ -38,7 +38,7 @@
                 <img src="images/icons/logo.svg" alt="logo" />
             </div>
             <div id="brand">
-                <p><a href="index.html">The Lovelace Hotel</a></p>
+                <p><a href="index.php">The Lovelace Hotel</a></p>
                 <img src="/images/icons/stars.svg" alt="five stars" />
             </div>
             <div id="nav">
