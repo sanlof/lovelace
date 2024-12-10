@@ -4,7 +4,7 @@
     <h1>Find Your<br />Sanctuary</h1>
     <img src="images/room8.jpeg" alt="" />
 </section>
-<a href="#explore" class="cta">Available Rooms</a>
+<a href="#explore" class="cta">View Available</a>
 </header>
 <main id="exp">
     <article id="explore">
@@ -41,53 +41,79 @@
             <img src="images/room4.jpeg" alt="" />
         </div>
     </article>
-    <section id="book">
-        <article>
-            <div class="inner-wrapper grid">
+    <article id="book-now">
+        <div class="inner-wrapper flex">
+            <section>
                 <h3>Make a Reservation</h3>
-                <section>
-                    <p>CALENDARS HERE</p>
-                </section>
-                <section>
-                    <form action="book.php" method="post" id="booking-form">
-                        <label for="transferCode">Payment details (transferCode)</label>
-                        <input type="text" name="transferCode">
+                <h2>Ready to have a Bloody Good Time?</h2>
+            </section>
+        </div>
+        <div class="inner-wrapper">
+            <section class="grid-3">
+                <article>
+                    <p>CALENDAR for BUDGET</p>
+                </article>
+                <article>
+                    <p>CALENDAR for STANDARD</p>
+                </article>
+                <article>
+                    <p>CALENDAR for LUXURY</p>
+                </article>
+            </section>
+            <form action="book.php" method="post" id="book">
+                <div>
+                    <label for="check-in">Check-in</label>
+                    <input type="date" name="check-in" min="2025-01-01" max="2025-01-31">
+                </div>
+                <div>
+                    <label for="check-out">Check-out</label>
+                    <input type="date" name="check-out" min="2025-01-01" max="2025-01-31">
+                </div>
+                <div>
+                    <h3>Room Preference</h3>
+                    <label for="room-1" class="room">
+                        <input type="radio" name="room" id="room-1" value="1">
+                        <span>The Sanguine Suite</span> <span>Luxury</span> <span>$3</span>
+                    </label>
+                    <label for="room-2" class="room">
+                        <input type="radio" name="room" id="room-2" value="2">
+                        <span>The Crimson Chamber</span> <span>Standard</span> <span>$2</span>
+                    </label>
+                    <label for="room-3" class="room">
+                        <input type="radio" name="room" id="room-3" value="3">
+                        <span>The Twilight Tomb</span> <span>Budget</span> <span>$1</span>
+                    </label>
+                </div>
 
-                        <label for="check-in">Check-in</label>
-                        <input type="date" name="check-in" min="2025-01-01" max="2025-01-31">
+                <div>
+                    <h3>Additional features</h3>
+                    <label for="feature-1" class="feature">
+                        <input type="checkbox" id="feature-1" name="features[]" value="1">
+                        <span>Wellness package</span> <span>Bone-Breaking Massage, Virgin Blood Bath and Stake Through the Heart</span> <span>$4</span>
+                    </label>
 
-                        <label for="check-out">Check-out</label>
-                        <input type="date" name="check-out" min="2025-01-01" max="2025-01-31">
+                    <label for="feature-2" class="feature">
+                        <input type="checkbox" id="feature-2" name="features[]" value="2">
+                        <span>Mindfulness package</span> <span>Morningstar Meditations and Moonlight Yoga</span> <span>$3</span>
+                    </label>
 
-                        <label for="room">Chose a Room</label>
-                        <select name="room" id="room">
-                            <option value="1">Luxury</option>
-                            <option value="2">Standard</option>
-                            <option value="3">Budget</option>
-                        </select>
+                    <label for="feature-3" class="feature">
+                        <input type="checkbox" id="feature-3" name="features[]" value="7">
+                        <span>Forgive a Foe</span> <span>One session, 45 minutes</span> <span>$2</span>
+                    </label>
 
-                        <label for="features">
-                            <input type="checkbox" name="features[]" value="1">Wellness package (includes: Bone-Breaking Massage, Virgin Blood Bath and Stake Through the Heart) ($4)
-                        </label>
+                    <p><em>Access to the Muscle Dungeon and activities for little ones are always free during your stay.</em></p>
+                </div>
 
-                        <label for="features">
-                            <input type="checkbox" name="features[]" value="2">
-                            Mindfulness package (includes: Morninstar Meditations and Moonlight Yoga) ($2)
-                        </label>
+                <div>
+                    <label for="transferCode" id="transferCode-label">Payment details (transferCode)</label>
+                    <input type="text" name="transferCode" id="transferCode">
+                </div>
+                <button name="book" type="submit" class="cta">Book</button>
 
-                        <label for="features">
-                            <input type="checkbox" name="features[]" value="7">
-                            Forgive a Foe (one session) ($2)
-                        </label>
-
-                        <p>Access to the Muscle Dungeon and activities for little ones are always free.</p>
-
-                        <button name="book" type="submit" class="cta">Book</button>
-                    </form>
-                </section>
-            </div>
-        </article>
-    </section>
+            </form>
+        </div>
+    </article>
 </main>
 
 <?php require_once(__DIR__ . '/footer.php'); ?>

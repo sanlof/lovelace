@@ -1,0 +1,380 @@
+/*
+    .           .
+   /)           (\
+  )  \ /\___/\ /  (
+   )   (o^—^o)   (
+  )  /  (… …)  \  (
+   \)           (/
+    °           ° SL
+ 
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gilda+Display&display=swap');
+
+
+:root {
+    --heading-font: 'gilda display', georgia, serif;
+    --sub-heading-font: 'barlow condensed', arial, sans-serif;
+    --text-font: 'barlow', arial, sans-serif;
+
+    --primary-light: #fff;
+    --primary-light-10: rgba(225, 225, 225, .1);
+    --primary-light-60: rgba(225, 225, 225, .6);
+    --primary-dark: #160301;
+    --primary-dark-40: rgba(0, 0, 0, .4);
+    --secondary-dark: #000A11; /*000A11*/
+    --primary-accent: #922C0D;
+    --primary-accent-20: rgba(146, 44, 13, 0.8);
+    --secondary-accent: #376377;
+
+    --inner-padding: 2.4rem;
+    --article-padding: 9.6rem;
+    --gap: 2.4rem;
+}
+
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    margin: 0;
+    background: var(--primary-dark);
+    color: var(--primary-light);
+    font: 300 2rem var(--text-font);
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a.cta,
+[type=submit].cta {
+    border: 1px solid #fff;
+    background: transparent;
+    font: 200 1.6rem var(--sub-heading-font);
+    text-transform: uppercase;
+    letter-spacing: .6rem;
+    padding: 12px 24px;
+    text-decoration: none;
+    color: var(--primary-light);
+    display: inline-block;
+}
+a.cta {
+    margin-top: var(--gap);
+}
+
+.inner-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--inner-padding);
+}
+
+
+header {
+    background: var(--primary-dark);
+    color: var(--primary-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    /* height: calc(100vh + 10rem); add height of quick-book-form */
+    height: 100vh;
+    width: 100vw;
+    padding: var(--inner-padding) var(--inner-padding) var(--article-padding);
+
+    .cta {
+        margin-top: -1.2rem;
+        background: var(--secondary-accent-20);
+        border: none;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-bottom: 0;
+
+        div {
+            width: 33%;
+        }
+
+        #logo {}
+        #brand {
+            text-align: center;
+            
+            p {
+                font: 200 2rem var(--sub-heading-font);
+                text-transform: uppercase;
+                letter-spacing: .6rem;
+                margin-bottom: var(--inner-padding);
+            }
+        }
+        #nav {
+            text-align: right;
+            
+            #menu { 
+                display: none; /* initialt tills man klicka på meny-knappen */
+                position: absolute;
+                top: 4.8rem;
+                right: 0;
+                width: 30vw;
+                height: 100vh;
+                z-index: 10;
+                background-color: #160301;
+            }
+
+            #menu.show { display: block; }
+        }
+
+    }
+
+    .hero {
+        width: 100%;
+        text-align: center;
+
+        h1 {
+            font: normal 9.5rem var(--heading-font);
+            text-transform: uppercase;
+            letter-spacing: 1.2rem;
+            text-shadow: 1px 1px 2px var(--primary-dark-40);
+            transition: 4s ease-in-out;
+            opacity: 0;
+            
+            &:first-line {
+                font-size: 6.4rem;
+            }
+            
+            &.active {
+                transition: 4s ease-in-out;
+                opacity: 1;
+            }
+        }
+    
+        img {
+            position: absolute;
+            top: 0; bottom: 0;
+            left: 0; right: 0;
+            z-index: 1;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+
+            &.active {
+                opacity: .4; /* Make active image visible */
+            }
+        }
+
+        h1, h1.active,
+        img, img.active {
+            transition: 2s ease-in-out;
+        }
+    }
+
+    #hero-exp {
+        h1 {
+            opacity: 1;
+        }
+        img {
+            opacity: .4;
+        }
+    }
+
+    nav, .cta, h1 {
+        position: relative;
+        z-index: 3;
+    }
+
+}
+
+main {
+
+    h2 {
+        font: 4.8rem var(--heading-font);
+        margin-bottom: calc(var(--gap) * 2);
+    }
+    h3 {
+        font: 2rem var(--sub-heading-font);
+        text-transform: uppercase;
+        color: var(--primary-accent);
+        margin: 0 0 var(--gap);
+    }
+    p {
+        color: var(--primary-light-60);
+        margin-bottom: var(--gap);
+        line-height: 3.6rem;
+    }
+    
+    article {
+        padding: var(--article-padding) 0;
+        position: relative;
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));;
+
+            section {
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                align-content: start;
+                position: relative;
+
+                h2, h3, p {
+                    grid-column: 1 / 6;
+                }
+                img {
+                    object-fit: cover;
+                    aspect-ratio: 7 / 9;
+                }  
+            }
+        }
+
+        &:nth-of-type(even) .grid {
+            section {
+                order: 2;
+                
+                h2, h3, p {
+                    grid-column: 2 / 7;
+                }
+            }
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-content: center;
+            row-gap: var(--article-padding);
+            gap: var(--gap);
+            text-align: center;
+
+            section {
+                position: static;
+                z-index: 2;
+
+                h3 {
+                    color: var(--primary-light);
+                }
+
+                img {
+                    padding-bottom: var(--gap);
+                    grid-column: span 6;
+                }
+            }
+        }
+        
+        .flex {
+            display: flex;
+            grid-template-columns: 1fr;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - calc(var(--article-padding) * 2));
+
+            section {
+                position: static;
+                z-index: 2;
+                text-align: center;
+                max-width: 80rem;
+            }
+        }
+
+        img.bg {
+            position: absolute;
+            top: 0; right: 0;
+            left: 0; bottom: 0;
+            object-fit: cover;
+            object-position: center;
+            height: 100%;
+            width: 100%;
+            opacity: .4;
+            z-index: 1;
+
+            &#experiences { object-position: bottom; }
+            &#little-ones, &#gym { object-position: top; }
+        }
+
+        &#book-now {
+            .flex {
+                min-height: auto;
+            }
+        }
+    }
+
+} /* main */
+    
+
+footer {
+    padding: var(--inner-padding);
+    color: var(--secondary-accent);
+    background-color: var(--secondary-dark);
+}
+
+
+/* booking form */
+
+form {
+    display: grid;
+    color: var(--primary-light-60);
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gap);
+
+    label {
+        display: inline-block;
+        padding-bottom: 1rem;
+    }
+    label.room,
+    label.feature {
+        display: grid;
+        grid-template-columns: auto 25rem 1fr 10rem;
+
+        span + span + span {
+            text-align: right;
+        }
+    }
+    input[type=radio]:checked ~ span,
+    input[type=checkbox]:checked ~ span {
+        color: var(--primary-light);
+    }
+    input {
+        background: var(--primary-light-10);
+        color: var(--primary-light);
+        font: inherit;
+        border: none;
+        padding: 1.1rem 1.2rem;
+    }
+    input[type=date] {
+        padding: 1rem 1.2rem;
+        width: 100%;
+    }
+    div + div + div {
+        grid-column: span 2;
+    }
+    input[type=radio],
+    input[type=checkbox] {
+        width: auto;
+        padding: 0;
+        margin-right: 2rem;
+    }
+    input#transferCode,
+    label#transferCode-label,
+    button {
+        display: block;
+        grid-column: span 2;
+        justify-self: start;
+    }
+    input#transferCode { 
+        width: 40rem;
+    }
+}
