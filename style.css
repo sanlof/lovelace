@@ -358,6 +358,7 @@ form {
     label.feature {
         display: grid;
         grid-template-columns: auto 25rem 1fr 10rem;
+        cursor: pointer;
 
         span + span + span {
             text-align: right;
