@@ -32,8 +32,13 @@
 </head>
 
 <body>
+    <nav id="menu" class="menu">
+        <a href="index.html">Home</a>
+        <a href="food.html">Food & Drink</a>
+        <a href="treats.html">Treats</a>
+    </nav>
     <header>
-        <nav>
+        <section id="top">
             <div id="logo">
                 <img src="images/icons/logo.svg" alt="logo" />
             </div>
@@ -43,10 +48,5 @@
             </div>
             <div id="nav">
                 <img src="images/icons/menu.svg" alt="menu icon" id="menu-btn" />
-                <div id="menu" class="menu">
-                    <a href="index.html">Home</a>
-                    <a href="food.html">Food & Drink</a>
-                    <a href="treats.html">Treats</a>
-                </div>
             </div>
-        </nav>
+        </section>

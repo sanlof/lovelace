@@ -80,6 +80,18 @@ a.cta {
     padding: var(--inner-padding);
 }
 
+nav#menu { 
+    display: none; /* initialt tills man klickar på meny-knappen */
+    position: absolute;
+    top: 4.8rem;
+    right: 0;
+    width: 30vw;
+    height: 100vh;
+    z-index: 10;
+    background-color: #160301;
+
+    &.show { display: block; }
+}
 
 header {
     background: var(--primary-dark);
@@ -100,7 +112,7 @@ header {
         border: none;
     }
 
-    nav {
+    #top {
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -111,7 +123,9 @@ header {
             width: 33%;
         }
 
-        #logo {}
+        #logo {
+            text-align: left;
+        }
         #brand {
             text-align: center;
             
@@ -124,21 +138,7 @@ header {
         }
         #nav {
             text-align: right;
-            
-            #menu { 
-                display: none; /* initialt tills man klicka på meny-knappen */
-                position: absolute;
-                top: 4.8rem;
-                right: 0;
-                width: 30vw;
-                height: 100vh;
-                z-index: 10;
-                background-color: #160301;
-            }
-
-            #menu.show { display: block; }
         }
-
     }
 
     .hero {
@@ -193,7 +193,7 @@ header {
         }
     }
 
-    nav, .cta, h1 {
+    #top, .cta, h1 {
         position: relative;
         z-index: 3;
     }
