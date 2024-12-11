@@ -46,7 +46,7 @@
                 <h3>Experiences</h3>
                 <h2>Treatments & Activities</h2>
                 <p>Vampires of the modern times know, that even though it might not alter one's already perfect complextion, exercise and other treatments are still important to stay in shape and look one's best. We offer a variety of activities and experiences that aim to fill the soulless inner void.</p>
-                <p><a href="features.php" class="cta">Explore</a></p>
+                <p><a href="treats.php" class="cta">Explore</a></p>
             </section>
             <img src="images/spa2.png" class="bg" id="exp" alt="" />
         </div>

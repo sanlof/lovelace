@@ -81,16 +81,29 @@ a.cta {
 }
 
 nav#menu { 
-    display: none; /* initialt tills man klickar på meny-knappen */
-    position: absolute;
-    top: 4.8rem;
-    right: 0;
-    width: 30vw;
-    height: 100vh;
-    z-index: 10;
-    background-color: #160301;
+    opacity: 0; /* initialt tills man klickar på meny-knappen */
+    visibility: hidden;
+    width: 100vw;
+    max-height: 0;
+    background: var(--secondary-dark);
+    color: var(--secondary-accent);
+    transition: 1s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: var(--gap);
 
-    &.show { display: block; }
+    &.show { 
+        opacity: 1;
+        visibility: visible;
+        max-height: 10rem;
+        transition: 1s ease-in-out; 
+        padding: var(--inner-padding);
+    }
+
+    a {
+
+    }
 }
 
 header {

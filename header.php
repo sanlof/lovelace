@@ -33,9 +33,9 @@
 
 <body>
     <nav id="menu" class="menu">
-        <a href="index.html">Home</a>
-        <a href="food.html">Food & Drink</a>
-        <a href="treats.html">Treats</a>
+        <a href="index.php">Home</a>
+        <a href="food.php">Food & Drink</a>
+        <a href="treats.php">Treats</a>
     </nav>
     <header>
         <section id="top">
