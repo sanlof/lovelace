@@ -61,28 +61,34 @@
                 </article>
             </section>
             <form action="book.php" method="post" id="book">
+                <?php if (!empty($_GET['message'])) : ?>
+                    <div class="error">
+                        <p><?= htmlspecialchars($_GET['message']); ?></p>
+                        <img src="https://giffiles.alphacoders.com/365/36557.gif" alt="Vampire Emergency Gif" />
+                    </div>
+                <?php endif; ?>
                 <section>
                     <div>
                         <label for="check-in">Check-in</label>
-                        <input type="date" name="check-in" min="2025-01-01" max="2025-01-31">
+                        <input type="date" name="check-in" min="2025-01-01" max="2025-01-31" required>
                     </div>
                     <div>
                         <label for="check-out">Check-out</label>
-                        <input type="date" name="check-out" min="2025-01-01" max="2025-01-31">
+                        <input type="date" name="check-out" min="2025-01-01" max="2025-01-31" required>
                     </div>
                 </section>
                 <section>
                     <h3>Room Preference</h3>
                     <label for="room-1" class="room">
-                        <input type="radio" name="room" id="room-1" value="1">
+                        <input type="radio" name="room" id="room-1" value="1" required>
                         <span>The Sanguine Suite</span> <span>Luxury</span> <span>$3</span>
                     </label>
                     <label for="room-2" class="room">
-                        <input type="radio" name="room" id="room-2" value="2">
+                        <input type="radio" name="room" id="room-2" value="2" required>
                         <span>The Crimson Chamber</span> <span>Standard</span> <span>$2</span>
                     </label>
                     <label for="room-3" class="room">
-                        <input type="radio" name="room" id="room-3" value="3">
+                        <input type="radio" name="room" id="room-3" value="3" required>
                         <span>The Twilight Tomb</span> <span>Budget</span> <span>$1</span>
                     </label>
                 </section>
@@ -96,19 +102,19 @@
                     </label>
 
                     <label for="feature-2" class="feature">
-                        <input type="checkbox" id="feature-2" name="features[]" value="1">
+                        <input type="checkbox" id="feature-2" name="features[]" value="2">
                         <span>Beastly Bathtub</span> <span>Relax in the luxurious warmth of crimson waters</span> <span>$2</span>
                     </label>
 
                     <label for="feature-3" class="feature">
-                        <input type="checkbox" id="feature-3" name="features[]" value="1">
+                        <input type="checkbox" id="feature-3" name="features[]" value="3">
                         <span>Macabre Minibar</span> <span>Cursed concoctions to fuel your darkest desires</span> <span>$1</span>
                     </label>
                 </section>
 
                 <section>
                     <label for="transferCode" id="transferCode-label">Payment details (transferCode)</label>
-                    <input type="text" name="transferCode" id="transferCode">
+                    <input type="text" name="transferCode" id="transferCode" required>
                 </section>
 
                 <button name="book" type="submit" class="cta">Book</button>
@@ -117,5 +123,4 @@
         </div>
     </article>
 </main>
-
 <?php require_once(__DIR__ . '/footer.php'); ?>

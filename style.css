@@ -24,7 +24,8 @@
     --primary-dark-40: rgba(0, 0, 0, .4);
     --secondary-dark: #000A11; /*000A11*/
     --primary-accent: #922C0D;
-    --primary-accent-20: rgba(146, 44, 13, 0.8);
+    --primary-accent-80: rgba(146, 44, 13, 0.8);
+    --primary-accent-20: rgba(146, 44, 13, 0.2);
     --secondary-accent: #376377;
 
     --inner-padding: 2.4rem;
@@ -117,7 +118,7 @@ header {
 
     .cta {
         margin-top: -1.2rem;
-        background: var(--primary-accent-20);
+        background: var(--primary-accent-80);
         border: none;
     }
 
@@ -349,7 +350,6 @@ form {
         gap: var(--gap);
         padding-top: 0;
     }
-
     label {
         display: inline-block;
         padding-bottom: 1rem;
@@ -394,5 +394,20 @@ form {
     }
     input#transferCode { 
         width: 40rem;
+    }
+    .error {
+        display: grid;
+        gap: var(--gap);
+        margin-bottom: calc(var(--gap) * 2);
+
+        p {
+            align-self: end;
+            border: 1px solid var(--primary-accent);
+            background: var(--primary-accent-20);
+            color: var(--primary-accent);
+            padding: var(--inner-padding);
+            font-weight: bold;
+            margin: 0;
+        }
     }
 }
