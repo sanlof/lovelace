@@ -45,7 +45,7 @@
         <div class="inner-wrapper flex">
             <section>
                 <h3>Make a Reservation</h3>
-                <h2>Ready to have a Bloody Good Time?</h2>
+                <h2>Ready to Have a Bloody Good Time?</h2>
             </section>
         </div>
         <div class="inner-wrapper">
@@ -61,15 +61,17 @@
                 </article>
             </section>
             <form action="book.php" method="post" id="book">
-                <div>
-                    <label for="check-in">Check-in</label>
-                    <input type="date" name="check-in" min="2025-01-01" max="2025-01-31">
-                </div>
-                <div>
-                    <label for="check-out">Check-out</label>
-                    <input type="date" name="check-out" min="2025-01-01" max="2025-01-31">
-                </div>
-                <div>
+                <section>
+                    <div>
+                        <label for="check-in">Check-in</label>
+                        <input type="date" name="check-in" min="2025-01-01" max="2025-01-31">
+                    </div>
+                    <div>
+                        <label for="check-out">Check-out</label>
+                        <input type="date" name="check-out" min="2025-01-01" max="2025-01-31">
+                    </div>
+                </section>
+                <section>
                     <h3>Room Preference</h3>
                     <label for="room-1" class="room">
                         <input type="radio" name="room" id="room-1" value="1">
@@ -83,32 +85,32 @@
                         <input type="radio" name="room" id="room-3" value="3">
                         <span>The Twilight Tomb</span> <span>Budget</span> <span>$1</span>
                     </label>
-                </div>
+                </section>
 
-                <div>
+                <section>
                     <h3>Additional features</h3>
+
                     <label for="feature-1" class="feature">
                         <input type="checkbox" id="feature-1" name="features[]" value="1">
-                        <span>Wellness package</span> <span>Bone-Breaking Massage, Virgin Blood Bath and Stake Through the Heart</span> <span>$4</span>
+                        <span>Sinister Sauna</span> <span>Unholy heat to vaporize your unmortal sorrows</span> <span>$3</span>
                     </label>
 
                     <label for="feature-2" class="feature">
-                        <input type="checkbox" id="feature-2" name="features[]" value="2">
-                        <span>Mindfulness package</span> <span>Morningstar Meditations and Moonlight Yoga</span> <span>$3</span>
+                        <input type="checkbox" id="feature-2" name="features[]" value="1">
+                        <span>Beastly Bathtub</span> <span>Relax in the luxurious warmth of crimson waters</span> <span>$2</span>
                     </label>
 
                     <label for="feature-3" class="feature">
-                        <input type="checkbox" id="feature-3" name="features[]" value="7">
-                        <span>Forgive a Foe</span> <span>One session, 45 minutes</span> <span>$2</span>
+                        <input type="checkbox" id="feature-3" name="features[]" value="1">
+                        <span>Macabre Minibar</span> <span>Cursed concoctions to fuel your darkest desires</span> <span>$1</span>
                     </label>
+                </section>
 
-                    <p><em>Access to the Muscle Dungeon and activities for little ones are always free during your stay.</em></p>
-                </div>
-
-                <div>
+                <section>
                     <label for="transferCode" id="transferCode-label">Payment details (transferCode)</label>
                     <input type="text" name="transferCode" id="transferCode">
-                </div>
+                </section>
+
                 <button name="book" type="submit" class="cta">Book</button>
 
             </form>

@@ -96,7 +96,7 @@ header {
 
     .cta {
         margin-top: -1.2rem;
-        background: var(--secondary-accent-20);
+        background: var(--primary-accent-20);
         border: none;
     }
 
@@ -325,10 +325,19 @@ footer {
 /* booking form */
 
 form {
-    display: grid;
     color: var(--primary-light-60);
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--gap);
+    padding: calc(var(--inner-padding) * 2);
+    background: var(--primary-light-10);
+    
+    section {
+        padding: var(--inner-padding) 0;
+    }
+    section:nth-of-type(1) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--gap);
+        padding-top: 0;
+    }
 
     label {
         display: inline-block;
@@ -357,9 +366,6 @@ form {
     input[type=date] {
         padding: 1rem 1.2rem;
         width: 100%;
-    }
-    div + div + div {
-        grid-column: span 2;
     }
     input[type=radio],
     input[type=checkbox] {
