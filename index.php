@@ -40,7 +40,7 @@
             <img src="images/restaurant8.jpeg" alt="" />
         </div>
     </article>
-    <article id="exp">
+    <article id="experiences">
         <div class="inner-wrapper flex">
             <section>
                 <h3>Experiences</h3>
@@ -68,7 +68,7 @@
                 <h3>Bloody good bites</h3>
                 <p>Sink your teeth into warm flesh, our blood-bags are trained to be gentle, tasteful and discreet.</p>
             </section>
-            <img src="/images/ada13.jpeg" class="bg" alt="" />
+            <img src="/images/ada13.jpeg" class="bg" id="feats" alt="" />
         </div>
     </article>
 </main>

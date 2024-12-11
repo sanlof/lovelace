@@ -311,8 +311,9 @@ main {
             opacity: .4;
             z-index: 1;
 
-            &#experiences { object-position: bottom; }
+            &#exp, &#feats { object-position: bottom; }
             &#little-ones, &#gym { object-position: top; }
+            &#feats { opacity: .1; }
         }
 
         &#book-now {
