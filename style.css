@@ -100,10 +100,6 @@ nav#menu {
         transition: 1s ease-in-out; 
         padding: var(--inner-padding);
     }
-
-    a {
-
-    }
 }
 
 header {
@@ -151,6 +147,7 @@ header {
         }
         #nav {
             text-align: right;
+            cursor: pointer;
         }
     }
 
