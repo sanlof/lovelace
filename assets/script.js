@@ -17,15 +17,15 @@ const hero = document.getElementById('hero');
 const heroContent = [
     {
         title: "Rediscover<br /> the Light",
-        image: "/images/castle.jpeg"
+        image: "../assets/images/castle.jpeg"
     },
     {
         title: "Taste the<br /> Sunshine",
-        image: "/images/ada26.jpeg"
+        image: "../assets/images/ada26.jpeg"
     },
     {
         title: "Find Your<br /> Sanctuary",
-        image: "/images/room8.jpeg"
+        image: "../assets/images/room8.jpeg"
     }
 ];
 
