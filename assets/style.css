@@ -27,6 +27,7 @@
     --primary-accent-80: rgba(146, 44, 13, 0.8);
     --primary-accent-20: rgba(146, 44, 13, 0.2);
     --secondary-accent: #376377;
+    --secondary-accent-50: rgba(55, 99, 119, .5);
 
     --inner-padding: 2.4rem;
     --article-padding: 9.6rem;
@@ -61,7 +62,7 @@ a {
 
 a.cta,
 [type=submit].cta {
-    border: 1px solid #fff;
+    border: 1px solid var(--primary-light);
     background: transparent;
     font: 200 1.6rem var(--sub-heading-font);
     text-transform: uppercase;
@@ -222,6 +223,11 @@ main {
         color: var(--primary-accent);
         margin: 0 0 var(--gap);
     }
+    h4 {
+        font: 1.6rem var(--heading-font);
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+    }
     p {
         color: var(--primary-light-60);
         margin-bottom: var(--gap);
@@ -248,8 +254,26 @@ main {
                 img {
                     object-fit: cover;
                     aspect-ratio: 7 / 9;
+                    
                 }  
+                img:nth-of-type(1) {
+                    grid-column: -1 / -4;
+                    object-fit: cover;
+                    position: absolute;
+                    top: 0;
+                }
+                img:nth-of-type(2) {
+                    grid-column: 2 / 5;
+                    position: relative;
+                    top: 10rem;
+                }
             }
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--gap);
+            text-align: center;
         }
 
         &:nth-of-type(even) .grid {
@@ -313,6 +337,8 @@ footer {
         &#features {
             background-color: var(--primary-dark);
             position: relative;
+            color: var(--primary-light-60);
+            padding: var(--article-padding) var(--inner-padding);
 
             .grid-3 {
                 display: grid;
@@ -326,6 +352,7 @@ footer {
 
                     h3 {
                         color: var(--primary-light);
+                        margin-bottom: var(--gap);
                     }
 
                     img {
@@ -352,12 +379,40 @@ footer {
     }
 }
 
+/* calendars */
+
+table {
+    border: .15rem solid var(--secondary-accent);
+    background: var(--secondary-dark);
+    table-layout: fixed;
+    margin-bottom: var(--gap);
+    border-collapse: collapse;
+    width: 100%;
+    color: var(--primary-light-60);
+}
+table th,
+table td {
+    padding: 1.6rem 0;
+    font-size: .8em;
+    border: 1px solid var(--primary-light-10);
+}
+table thead th {
+    background-color:  var(--secondary-accent-50);
+}
+.booked {
+    background: url('../assets/images/icons/booked.svg') no-repeat;
+    background-size: 100%;
+}
+.available {
+    /* color: var(--primary-light); */
+}
 
 /* booking form */
 
 form {
     color: var(--primary-light-60);
     padding: calc(var(--inner-padding) * 2);
+    border: 10px double var(--primary-light-10);
     background: var(--primary-light-10);
     
     section {
@@ -366,7 +421,7 @@ form {
     section:nth-of-type(1) {
         padding-top: 0;
     }
-    section:nth-of-type(2) {
+    section:nth-of-type(1) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: var(--gap);
