@@ -245,7 +245,7 @@ main {
             section {
                 display: grid;
                 grid-template-columns: repeat(6, 1fr);
-                align-content: start;
+                align-content: center;
                 position: relative;
 
                 h2, h3, p {
