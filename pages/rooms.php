@@ -1,5 +1,7 @@
 <?php require_once(__DIR__ . '/../templates/header.php');
 
+require_once(__DIR__ . '/../includes/calendar.php');
+
 // connect:a till databasen
 $db = new PDO('sqlite:' . realpath(__DIR__ . '/../hotel.db'));
 
@@ -65,22 +67,38 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="inner-wrapper">
             <section class="grid-3">
                 <article>
-                    <p>CALENDAR for BUDGET</p>
+                    <?php generateCalendar(date('m'), date('Y'), $room1BookedDates); ?>
+                    <h3>The Sanguine Suite</h3>
+                    <h4>Luxury</h4>
                 </article>
                 <article>
-                    <p>CALENDAR for STANDARD</p>
+                    <?php generateCalendar(date('m'), date('Y'), $room2BookedDates); ?>
+                    <h3>The Crimson Chamber</h3>
+                    <h4>Standard</h4>
                 </article>
                 <article>
-                    <p>CALENDAR for LUXURY</p>
+                    <?php generateCalendar(date('m'), date('Y'), $room3BookedDates); ?>
+                    <h3>The Twilight Tomb</h3>
+                    <h4>Budget</h4>
                 </article>
             </section>
-            <form action="rooms.php" method="post" id="book">
+            <form action="../includes/booking.php" method="post" id="book">
                 <?php if (!empty($_GET['message'])) : ?>
                     <div class="error">
                         <p><?= htmlspecialchars($_GET['message']); ?></p>
                         <img src="https://giffiles.alphacoders.com/365/36557.gif" alt="Vampire Emergency Gif" />
                     </div>
                 <?php endif; ?>
+                <section>
+                    <div>
+                        <label for="check-in">Check-in</label>
+                        <input type="date" name="check-in" min="2025-01-01" max="2025-01-31" required>
+                    </div>
+                    <div>
+                        <label for="check-out">Check-out</label>
+                        <input type="date" name="check-out" min="2025-01-01" max="2025-01-31" required>
+                    </div>
+                </section>
                 <section>
                     <h3>Room Preference</h3>
                     <?php foreach ($rooms as $room) : ?>
@@ -97,17 +115,6 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </label>
                     <?php endforeach; ?>
                 </section>
-                <section>
-                    <div>
-                        <label for="check-in">Check-in</label>
-                        <input type="date" name="check-in" min="2025-01-01" max="2025-01-31" required>
-                    </div>
-                    <div>
-                        <label for="check-out">Check-out</label>
-                        <input type="date" name="check-out" min="2025-01-01" max="2025-01-31" required>
-                    </div>
-                </section>
-
                 <section>
                     <h3>Additional features</h3>
                     <?php foreach ($features as $feature) : ?>
@@ -142,10 +149,14 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
     document.getElementById('book').addEventListener('submit', function(event) {
         event.preventDefault(); // förhindra submit innan totalcost har räknats ut
 
-        const totalCost = calculateTotalCost();
+        // Få tillbaka totalCost från calculateTotalCost
+        const {
+            totalCost
+        } = calculateTotalCost();
         if (totalCost === null) {
             return; // man måste ha valt åtminstone ett rum, så totalcost kan inte vara null
         }
+
         const transferCode = document.getElementById('transferCode').value;
         const apiData = {
             transferCode: transferCode,
@@ -167,7 +178,38 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 if (data.status === 'success') {
                     console.log('API request was successful, form will be submitted.');
                     alert('Payment was successful!');
-                    document.getElementById('book').submit(); // NU kan vi submitta formuläret!
+
+                    // Andra API-anropet - använd /deposit för att sätta in pengar
+                    const depositData = {
+                        user: 'sandra',
+                        transferCode: transferCode
+                    };
+
+                    return fetch('https://www.yrgopelago.se/centralbank/depot.php', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(depositData)
+                        })
+                        .then(depositResponse => depositResponse.json())
+                        .then(depositData => {
+                            console.log('Response from external API (deposit):', depositData);
+                            if (depositData.status === 'success') {
+                                console.log('Deposit was successful!');
+                                alert('Deposit was successful! Your booking is confirmed.');
+
+                                document.getElementById('book').submit(); // NU kan vi submitta formuläret! 
+                            } else {
+                                console.error('Deposit failed:', depositData);
+                                alert('Deposit failed. Please try again.');
+                            }
+                        })
+                        .catch(depositError => {
+                            console.error('Error with deposit API:', depositError);
+                            alert('There was an error with the deposit request.');
+                        });
+
                 } else {
                     alert('Payment failed. Please try again.');
                 }
@@ -176,7 +218,7 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 console.error('Error with API:', error);
                 alert('There was an error with the payment request.');
             });
-    }); // slut på eventlistener för sumbit
+    }); // slut på eventlistener för submit
 
     // uppdatera (change) totalcost dynamiskt beroende på vad som är markerat
     document.querySelectorAll('input[name="room"], input[name="feature"], input[name="check-in"], input[name="check-out"]').forEach(input => {
@@ -184,7 +226,9 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
     });
 
     function updateTotalCost() {
-        const totalCost = calculateTotalCost();
+        const {
+            totalCost
+        } = calculateTotalCost(); // nu får vi totalCost
         if (totalCost !== null) {
             // uppdatera totaltcost som syns
             document.getElementById('total-cost-display').innerText = `$${totalCost}`;
@@ -200,20 +244,24 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
         const selectedRoom = document.querySelector('input[name="room"]:checked');
 
         if (!checkInDate || !checkOutDate || !selectedRoom) {
-            return null; // alla dessa fält måste vara ifyllad för att kunna göra en uträkning i nästa steg
+            return {
+                totalCost: null
+            }; // alla dessa fält måste vara ifyllad för att kunna göra en uträkning
         }
 
         const roomPrice = parseFloat(document.querySelector(`#room-price-${selectedRoom.value}`).innerText.replace('$', '')); // parseFloat gör om en string till nummer
 
-        // ränka ut antal nätter
+        // räkna ut antal nätter
         const checkIn = new Date(checkInDate);
         const checkOut = new Date(checkOutDate);
         const timeDiff = checkOut - checkIn;
-        const numberOfNights = timeDiff / (1000 * 3600 * 24); // konvertera millisek till dygn
+        const numberOfNights = (timeDiff / (1000 * 3600 * 24)) + 1; // konvertera millisek till dygn, och lägg till 1 för att man ska kunna boka bara en dag t.ex. 15, tidigare var man tvungen att väjla t.ex. 15 till 16 men då kunde inte 16:e bokas sedan
 
         if (numberOfNights <= 0) {
             alert('Check-out date must be after check-in date.');
-            return null;
+            return {
+                totalCost: null
+            }; // returera null om check-out är före check-in
         }
 
         // beräkna totalkostnad för rum
@@ -226,7 +274,9 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
             totalCost += featurePrice;
         });
 
-        return totalCost; // nu ska allt vara uträknat, returnera totalCost
+        return {
+            totalCost: totalCost
+        }; // nu returnerar vi bara totalCost
     }
 </script>
 <?php require_once(__DIR__ . '/../templates/footer.php'); ?>
