@@ -34,10 +34,9 @@
 <body>
     <nav id="menu" class="menu">
         <a href="../index.php">Home</a>
-        <a href="../pages/food.php">Food & Drink</a>
-        <a href="../pages/treats.php">Treats</a>
-        <a href="../pages/rooms.php">Rooms</a>
-        <a href="../pages/rooms.php#book-now">BOOK NOW</a>
+        <a href="../pages/food.php">Restaurant</a>
+        <a href="../pages/treats.php">Experiences</a>
+        <a href="../pages/rooms.php">Rooms & Booking</a>
     </nav>
     <header>
         <section id="top">
@@ -46,7 +45,7 @@
             </div>
             <div id="brand">
                 <p><a href="../index.php">The Lovelace Hotel</a></p>
-                <img src="../assets/images/icons/stars.svg" alt="five stars" />
+                <img src="../assets/images/icons/stars-3.svg" alt="three stars" />
             </div>
             <div id="nav">
                 <img src="../assets/images/icons/menu.svg" alt="menu icon" id="menu-btn" />
