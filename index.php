@@ -23,7 +23,7 @@
                 <h3>Rooms & Suites</h3>
                 <h2>Find Your Sanctuary</h2>
                 <p></p>
-                <p><a href="rooms.php" class="cta">View Rooms</a></p>
+                <p><a href="../pages/rooms.php" class="cta">View Rooms</a></p>
             </section>
             <img src="../assets/images/room10.jpeg" class="bg" alt="" />
         </div>
@@ -35,7 +35,7 @@
                 <h2>Fancy a Bite?</h2>
                 <p>Regardless of wether you prefer to sink your teeth directly into warm flesh or rather savour your meal out of a fancy crystal glass, our blood-bags are trained to be gentle, tasteful and discreet.</p>
                 <p>We also offer synthetic blood in the form of the somewhat tolerable Tru:Blood.</p>
-                <p><a href="food.php" class="cta">Learn more</a></p>
+                <p><a href="../pages/food.php" class="cta">Learn more</a></p>
             </section>
             <img src="../assets/images/restaurant8.jpeg" alt="" />
         </div>
@@ -46,29 +46,19 @@
                 <h3>Experiences</h3>
                 <h2>Treatments & Activities</h2>
                 <p>Vampires of the modern times know, that even though it might not alter one's already perfect complextion, exercise and other treatments are still important to stay in shape and look one's best. We offer a variety of activities and experiences that aim to fill the soulless inner void.</p>
-                <p><a href="treats.php" class="cta">Explore</a></p>
+                <p><a href="../pages/treats.php" class="cta">Explore</a></p>
             </section>
             <img src="../assets/images/spa2.png" class="bg" id="exp" alt="" />
         </div>
     </article>
-    <article id="features">
-        <div class="inner-wrapper grid-3">
+    <article id="food">
+        <div class="inner-wrapper grid">
             <section>
-                <img src="../assets/images/icons/check-circle.svg" alt="" class="feature-icon-1" />
-                <h3>Bask in the Sun</h3>
-                <p>The possibility to see the sun again makes the Lovelace Hotel a given retreat for any vampire.</p>
+                <h3>February 14th</h3>
+                <h2>Silver Bullet for My Valentine</h2>
+                <p>Every Friday night, dances are arranged in the ballroom with the Chess-tiled floor. On February the 14th, the annual Valentine's ball is held. This year's theme is forbidden love, inspired by the unlucky romance between a vampire and werewolf.</p>
             </section>
-            <section>
-                <img src="../assets/images/icons/heart.svg" alt="" class="feature-icon-2" />
-                <h3>Revitalize</h3>
-                <p>We offer a variety of activities and experiences with focus on overall wellbeing, aiming to make our undead guests feel alive.</p>
-            </section>
-            <section>
-                <img src="../assets/images/icons/drop.svg" alt="" class="feature-icon-3" />
-                <h3>Bloody good bites</h3>
-                <p>Sink your teeth into warm flesh, our blood-bags are trained to be gentle, tasteful and discreet.</p>
-            </section>
-            <img src="../assets/images/ada13.jpeg" class="bg" id="feats" alt="" />
+            <img src="../assets/images/dance.jpeg" alt="" />
         </div>
     </article>
 </main>
