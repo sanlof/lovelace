@@ -104,8 +104,7 @@ $stmt->execute();
 $image_urls = [
     "https://giffiles.alphacoders.com/368/36829.gif",
     "https://giffiles.alphacoders.com/365/36520.gif",
-    "https://giffiles.alphacoders.com/364/36497.gif",
-    "https://giffiles.alphacoders.com/368/36817.gif"
+    "https://giffiles.alphacoders.com/364/36497.gif"
 ];
 $random_image_url = $image_urls[rand(0, count($image_urls) - 1)];
 
@@ -118,7 +117,7 @@ $receipt = [
     'features' => $feature_details,
     'totalcost' => $total_price,
     'additional_info' => [
-        'greeting' => 'Thank you for trusting us! We wish you a splendid stay...',
+        'greeting' => 'Thank you for trusting us... We wish you a splendid stay!',
         'imageUrl' => $random_image_url
     ]
 ];
