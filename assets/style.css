@@ -95,7 +95,8 @@ nav#menu {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    gap: var(--gap);
+    gap: calc(var(--gap) * 2);
+    font: .85em var(--heading-font);
 
     &.show { 
         opacity: 1;
@@ -103,6 +104,10 @@ nav#menu {
         max-height: 10rem;
         transition: 1s ease-in-out; 
         padding: var(--inner-padding);
+    }
+
+    a:hover {
+        color: var(--primary-light);
     }
 }
 
@@ -212,30 +217,28 @@ header {
     }
 
 }
-
+h2 {
+    font: 4.8rem var(--heading-font);
+    margin-bottom: calc(var(--gap) * 2);
+}
+h3 {
+    font: 2rem var(--sub-heading-font);
+    text-transform: uppercase;
+    color: var(--primary-accent);
+    margin: 0 0 var(--gap);
+}
+h4 {
+    font: 1.6rem var(--heading-font);
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+}
 main {
-
-    h2 {
-        font: 4.8rem var(--heading-font);
-        margin-bottom: calc(var(--gap) * 2);
-    }
-    h3 {
-        font: 2rem var(--sub-heading-font);
-        text-transform: uppercase;
-        color: var(--primary-accent);
-        margin: 0 0 var(--gap);
-    }
-    h4 {
-        font: 1.6rem var(--heading-font);
-        text-transform: uppercase;
-        letter-spacing: .2rem;
-    }
     p {
         color: var(--primary-light-60);
         margin-bottom: var(--gap);
         line-height: 3.6rem;
     }
-    
+
     article {
         padding: var(--article-padding) 0;
         position: relative;
@@ -256,11 +259,11 @@ main {
                 img {
                     object-fit: cover;
                     aspect-ratio: 7 / 9;
-                    
+                    width: 100%;
+                    height: auto;
                 }  
                 img:nth-of-type(1) {
                     grid-column: -1 / -4;
-                    object-fit: cover;
                     position: absolute;
                     top: 0;
                 }
@@ -288,12 +291,14 @@ main {
             text-align: center;
         }
 
-        &:nth-of-type(even) .grid {
-            section {
-                order: 2;
-                
-                h2, h3, p {
-                    grid-column: 2 / 7;
+        &.basic:nth-of-type(even) {
+            .grid {
+                section {
+                    order: 2;
+                    
+                    h2, h3, p {
+                        grid-column: 2 / 7;
+                    }
                 }
             }
         }
@@ -330,10 +335,37 @@ main {
         }
 
         &#book-now {
+            background: black;
+            padding-top: 0;
+            background: 
+            linear-gradient(0deg, 
+            rgba(255,255,255,0) 50%, 
+            rgba(0,0,0,1) 100%);
+
+            .inner-wrapper,
+            .inner-wrapper article {
+                padding: 0;
+            }
+            form {
+                margin-top: var(--article-padding);
+            }
+
             .flex {
                 min-height: auto;
             }
+            img.bg {
+                max-height: 100vh;
+                z-index: 0;
+                margin: 0 auto;
+                object-fit: contain;
+                position: relative;
+                opacity: .6;
+            }
         }
+    }
+
+    article.basic + article.basic {
+        padding-top: 0;
     }
 
 } /* main */
@@ -342,6 +374,11 @@ main {
 footer {
     color: var(--secondary-accent);
     background-color: var(--secondary-dark);
+
+    p {
+        font-size: .9em;
+        line-height: 1.6em;
+    }
 
     section {
         padding: var(--inner-padding);
@@ -355,7 +392,7 @@ footer {
             .grid-3 {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                gap: var(--gap);
+                gap: var(--article-padding);
                 text-align: center;
 
                 article {
@@ -412,7 +449,7 @@ table thead th {
     background-color:  var(--secondary-accent-50);
 }
 .booked {
-    background: url('../assets/images/icons/booked.svg') no-repeat;
+    background: url('../assets/images/icons/booked.svg') center no-repeat;
     background-size: 100%;
 }
 .available {
