@@ -1,10 +1,10 @@
 <?php require_once(__DIR__ . '/templates/header.php'); ?>
 
 <section class="hero" id="hero"></section>
-<a href="#intro" class="cta">Explore</a>
+<a href="#intro" class="cta">Enter</a>
 </header>
 <main>
-    <article id="intro">
+    <article class="basic" id="intro">
         <div class="inner-wrapper grid">
             <section>
                 <h3>The Lovelace Hotel</h3>
@@ -28,7 +28,7 @@
             <img src="../assets/images/room10.jpeg" class="bg" alt="" />
         </div>
     </article>
-    <article id="food">
+    <article class="basic" id="food">
         <div class="inner-wrapper grid">
             <section>
                 <h3>Restaurant</h3>
@@ -51,10 +51,10 @@
             <img src="../assets/images/spa2.png" class="bg" id="exp" alt="" />
         </div>
     </article>
-    <article id="food">
+    <article class="basic" id="food">
         <div class="inner-wrapper grid">
             <section>
-                <h3>February 14th</h3>
+                <h3>Upcoming Event</h3>
                 <h2>Silver Bullet for My Valentine</h2>
                 <p>Every Friday night, dances are arranged in the ballroom with the Chess-tiled floor. On February the 14th, the annual Valentine's ball is held. This year's theme is forbidden love, inspired by the unlucky romance between a vampire and werewolf.</p>
             </section>

@@ -7,7 +7,7 @@
 <a href="#explore" class="cta">Explore</a>
 </header>
 <main>
-    <article id="explore">
+    <article class="basic" id="explore">
         <div class="inner-wrapper grid">
             <section>
                 <h3>Wellness</h3>
@@ -17,7 +17,7 @@
             <img src="../assets/images/spa6.png" alt="" />
         </div>
     </article>
-    <article>
+    <article class="basic">
         <div class="inner-wrapper grid">
             <section>
                 <h3>Wellness</h3>
@@ -27,7 +27,7 @@
             <img src="../assets/images/spa1.png" alt="" />
         </div>
     </article>
-    <article>
+    <article class="basic">
         <div class="inner-wrapper grid">
             <section>
                 <h3>Wellness</h3>
@@ -47,7 +47,7 @@
             <img src="../assets/images/gym3.jpeg" class="bg" id="gym" alt="" />
         </div>
     </article>
-    <article>
+    <article class="basic">
         <div class="inner-wrapper grid">
             <section>
                 <h3>Mindfulness</h3>
@@ -57,7 +57,7 @@
             <img src="../assets/images/goat-yoga2.png" alt="" />
         </div>
     </article>
-    <article>
+    <article class="basic">
         <div class="inner-wrapper grid">
             <section>
                 <h3>Mindfulness</h3>
@@ -67,7 +67,7 @@
             <img src="../assets/images/yoga8.jpeg" alt="" />
         </div>
     </article>
-    <article>
+    <article class="basic">
         <div class="inner-wrapper grid">
             <section>
                 <h3>Counseling</h3>
@@ -87,7 +87,7 @@
             <img src="../assets/images/children10.jpeg" class="bg" alt="" />
         </div>
     </article>
-    <article id="dragons-lair">
+    <article class="basic">
         <div class="inner-wrapper grid">
             <section>
                 <h3>Little Ones</h3>
@@ -97,7 +97,7 @@
             <img src="../assets/images/children7.jpeg" alt="" />
         </div>
     </article>
-    <article>
+    <article class="basic">
         <div class="inner-wrapper grid">
             <section>
                 <h3>Little Ones</h3>
@@ -107,7 +107,7 @@
             <img src="../assets/images/baby-vamp-camp.jpeg" alt="" />
         </div>
     </article>
-    <article>
+    <article class="basic">
         <div class="inner-wrapper grid">
             <section>
                 <h3>Little Ones</h3>

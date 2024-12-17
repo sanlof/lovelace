@@ -4,10 +4,10 @@
     <h1>Fancy a<br />Bite?</h1>
     <img src="../assets/images/restaurant6.jpeg" alt="" />
 </section>
-<a href="#bite" class="cta">Read More</a>
+<a href="#bite" class="cta">Explore</a>
 </header>
 <main id="exp">
-    <article id="bite">
+    <article class="basic" id="bite">
         <div class="inner-wrapper grid">
             <section>
                 <h3>Restaurant</h3>
@@ -18,7 +18,7 @@
             <img src="../assets/images/restaurant8.jpeg" alt="" />
         </div>
     </article>
-    <article>
+    <article class="basic">
         <div class="inner-wrapper grid">
             <section>
                 <h3>Restaurant</h3>
@@ -28,7 +28,7 @@
             <img src="../assets/images/restaurant10.jpeg" alt="" />
         </div>
     </article>
-    <article>
+    <article class="basic">
         <div class="inner-wrapper grid">
             <section>
                 <h3>Restaurant</h3>
@@ -39,14 +39,14 @@
             <img src="../assets/images/restaurant16.jpeg" alt="" />
         </div>
     </article>
-    <article>
+    <article class="basic">
         <div class="inner-wrapper grid">
             <section>
                 <h3>Restaurant</h3>
                 <h2>Food for the Living</h2>
                 <p>For non-vampire guests, we keep a smaller menu of nutrients. Garlic, though, is for obvious reasons prohibited throughout the hotel. In order to meet our non-vampire guests needs, please contact us at least one week in advance.</p>
             </section>
-            <img src="../assets/images/restaurant12.jpeg" alt="" />
+            <img src="../assets/images/restaurant13.jpeg" alt="" />
         </div>
     </article>
 </main>

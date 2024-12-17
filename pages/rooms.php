@@ -23,7 +23,7 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <a href="#explore" class="cta">View Available</a>
 </header>
 <main id="exp">
-    <article id="explore">
+    <article class="basic" id="explore">
         <div class="inner-wrapper grid">
             <section>
                 <h3>Luxury</h3>
@@ -34,7 +34,7 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <img src="../assets/images/room15.jpeg" alt="" />
         </div>
     </article>
-    <article>
+    <article class="basic">
         <div class="inner-wrapper grid">
             <section>
                 <h3>Standard</h3>
@@ -45,7 +45,7 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <img src="../assets/images/room9.jpeg" alt="" />
         </div>
     </article>
-    <article>
+    <article class="basic">
         <div class="inner-wrapper grid">
             <section>
                 <h3>Budget</h3>
@@ -63,6 +63,7 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <h3>Make a Reservation</h3>
                 <h2>Ready to Have a Bloody Good Time?</h2>
             </section>
+            <img src="https://giffiles.alphacoders.com/368/36817.gif" class="bg" />
         </div>
         <div class="inner-wrapper">
             <section class="grid-3">
