@@ -1,3 +1,9 @@
+/*** smooth transition between pages ***/
+
+document.addEventListener('DOMContentLoaded', function(event) {
+    document.querySelector('body').style.opacity = 1
+})
+
 /*** menu ***/
 
 const menuBtn = document.getElementById("menu-btn");

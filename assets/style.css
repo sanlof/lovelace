@@ -49,6 +49,8 @@ body {
     background: var(--primary-dark);
     color: var(--primary-light);
     font: 300 2rem var(--text-font);
+    opacity: 0;
+    transition: opacity 1s;
 }
 
 img {
