@@ -113,7 +113,6 @@
                 <h3>Little Ones</h3>
                 <h2>South Tower Meetings</h2>
                 <p>Little ones of a mentally mature age often struggle to come to terms with the dysphoria that inevitably comes with the eternal entrapment inside a child's body. Sharing experiences with others in the same situation can help, making one feel less alone. Meetings are held every evening in the South Tower.</p>
-                <p><a href="/" class="cta">Book now</a></p>
             </section>
             <img src="../assets/images/children13.jpeg" alt="" />
         </div>
