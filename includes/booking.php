@@ -22,7 +22,7 @@ $check_in_date = date('Y-m-d', strtotime($check_in_date));
 $check_out_date = date('Y-m-d', strtotime($check_out_date));
 
 // kolla om check-out är senare än check-in
-if (strtotime($check_out_date) <= strtotime($check_in_date)) {
+if (strtotime($check_out_date) < strtotime($check_in_date)) {
     showError('Check-out date must be later than check-in date!');
 }
 
