@@ -28,6 +28,8 @@
     --primary-accent-20: rgba(146, 44, 13, 0.2);
     --secondary-accent: #376377;
     --secondary-accent-50: rgba(55, 99, 119, .5);
+    --deep-burgundy: rgb(74, 15, 13);
+    --rose-red: rgb(171, 69, 73);
 
     --inner-padding: 2.4rem;
     --article-padding: 9.6rem;
@@ -362,6 +364,39 @@ main {
                 opacity: .6;
             }
         }
+
+        &#reviews {
+            padding: 0;
+            margin-top: -10rem;
+            position: relative;
+            z-index: 10;
+            font-size: .85em;
+
+            section {
+                background: var(--deep-burgundy);
+                padding: 24px;
+                text-align: left;
+                box-shadow: 0 0 10rem var(--primary-dark-40);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                p:first-child, strong {
+                    color: var(--primary-accent);
+                }
+
+                img {
+                    border-radius: 50%;
+                    object-fit: cover;
+                    width: 64px;
+                    height: 64px;
+                    margin: 24px 0 16px;
+                }
+                img, strong {
+                    display: block;
+                }
+            }
+        }
     }
 
     article.basic + article.basic {
@@ -470,7 +505,8 @@ form {
     section:nth-of-type(1) {
         padding-top: 0;
     }
-    section:nth-of-type(1) {
+    section:nth-of-type(1),
+    section:nth-of-type(5) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: var(--gap);
@@ -500,7 +536,8 @@ form {
         border: none;
         padding: 1.1rem 1.2rem;
     }
-    input[type=date] {
+    input[type=date],
+    input[type=text] {
         padding: 1rem 1.2rem;
         width: 100%;
     }
@@ -509,16 +546,6 @@ form {
         width: auto;
         padding: 0;
         margin-right: 2rem;
-    }
-    input#transferCode,
-    label#transferCode-label,
-    button {
-        display: block;
-        grid-column: span 2;
-        justify-self: start;
-    }
-    input#transferCode { 
-        width: 40rem;
     }
     .error {
         display: grid;
