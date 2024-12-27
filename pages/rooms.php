@@ -28,7 +28,7 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <section>
                 <h3>Luxury</h3>
                 <h2>The Sanguine Suite</h2>
-                <p>This large suite is situated in one of the castle towers. The windows are of the highest quality and faces all directions, so that you may enjoy the splendid views of both sunrise and sunset from high above.</p>
+                <p>This luxury suite is situated in one of the castle towers. It features three separate rooms and a walk-in-closet. The bed has a firm matress with lovely velvet bedding. The windows are of the highest quality and faces all directions, so that you may enjoy the splendid views of both sunrise and sunset from high above.</p>
                 <p><a href="#book-now" class="cta">Book now</a></p>
             </section>
             <img src="../assets/images/room15.jpeg" alt="" />
@@ -39,7 +39,7 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <section>
                 <h3>Standard</h3>
                 <h2>The Crimson Chamber</h2>
-                <p>At the middle section of the castle, the Crimson Chamber is situated together with the other standard rooms. It has great views and secure windows.</p>
+                <p>This comfortable chamber is situated in the middle-section of the castle. It features one room with windows facing two directions. It comes with a firm bed and velvet bedding, making it a given choice for those who want a deluxe feel without the expensive prize tag.</p>
                 <p><a href="#book-now" class="cta">Book now</a></p>
             </section>
             <img src="../assets/images/room9.jpeg" alt="" />
@@ -50,8 +50,7 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <section>
                 <h3>Budget</h3>
                 <h2>The Twilight Tomb</h2>
-                <p>On the bottom level of the castle, this reasonably priced gem can be found. Even though limited to one window, the uv-filtering glass still offers good views of the sunset. Moreover, the windows are reinforced with silver bars, securing a good nights rest without the fear of attacks from wolves or the like.</p>
-                <p></p>
+                <p>On the bottom level of the castle, this very reasonably priced little gem can be found. Its single window offers good views of the sunset and is reinforced with silver bars, securing a good nights rest without the fear of attacks from wolves or the like.</p>
                 <p><a href="#book-now" class="cta">Book now</a></p>
             </section>
             <img src="../assets/images/room4.jpeg" alt="" />
@@ -135,8 +134,14 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     Total Cost: <span id="total-cost-display">$0</span>
                 </section>
                 <section>
-                    <label for="transferCode" id="transferCode-label">Payment details (transferCode)</label>
-                    <input type="text" name="transferCode" id="transferCode" required>
+                    <div>
+                        <label for="transferCode" id="transferCode-label">Payment details (transferCode)</label>
+                        <input type="text" name="transferCode" id="transferCode" required>
+                    </div>
+                    <div>
+                        <label for="discountCode" id="discountCode-label">Discount code?</label>
+                        <input type="text" name="discountCode" id="discountCode">
+                    </div>
                     <input type="hidden" name="totalcost" id="totalcost" value="" required>
                 </section>
 
@@ -186,7 +191,7 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         transferCode: transferCode
                     };
 
-                    return fetch('https://www.yrgopelago.se/centralbank/depot.php', {
+                    return fetch('https://www.yrgopelago.se/centralbank/deposit', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'
@@ -222,7 +227,7 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }); // slut på eventlistener för submit
 
     // uppdatera (change) totalcost dynamiskt beroende på vad som är markerat
-    document.querySelectorAll('input[name="room"], input[name="feature"], input[name="check-in"], input[name="check-out"]').forEach(input => {
+    document.querySelectorAll('input[name="room"], input[name="feature"], input[name="check-in"], input[name="check-out"], input[name="discountCode"]').forEach(input => {
         input.addEventListener('change', updateTotalCost);
     });
 
@@ -242,6 +247,7 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
     function calculateTotalCost() {
         const checkInDate = document.querySelector('input[name="check-in"]').value;
         const checkOutDate = document.querySelector('input[name="check-out"]').value;
+        const discountCode = document.querySelector('input[name="discountCode"]').value;
         const selectedRoom = document.querySelector('input[name="room"]:checked');
 
         if (!checkInDate || !checkOutDate || !selectedRoom) {
@@ -268,6 +274,11 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
         // beräkna totalkostnad för rum
         let totalCost = roomPrice * numberOfNights;
 
+        // rabatt om man bokar minst tre nätter och skriver rätt kod
+        if (numberOfNights >= 3 && discountCode === 'Jan25') {
+            totalCost = totalCost * 0.8;
+        }
+
         // lägg till ev kostnad för valda features
         const selectedFeatures = document.querySelectorAll('input[name="feature"]:checked');
         selectedFeatures.forEach(function(feature) {
@@ -276,8 +287,8 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
         });
 
         return {
-            totalCost: totalCost
-        }; // nu returnerar vi bara totalCost
+            totalCost: totalCost.toFixed(2) // så det inte blir fler än två decimaler
+        };
     }
 </script>
 <?php require_once(__DIR__ . '/../templates/footer.php'); ?>
