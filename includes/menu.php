@@ -21,6 +21,6 @@ $menuItems2 = [
 
 foreach ($menuItems2 as $menuItem2): ?>
 
-    <a href="<?= $menuItem2['link']; ?>"><?= $menuItem2['menuText']; ?></a></li>
+    <a href="<?= $menuItem2['link']; ?>"><?= $menuItem2['menuText']; ?></a>
 
 <?php endforeach; ?>
