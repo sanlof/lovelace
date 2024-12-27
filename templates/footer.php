@@ -1,4 +1,7 @@
 <footer>
+    <nav id="foot-menu" class="menu">
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/includes/menu.php'); ?>
+    </nav>
     <section id="features">
         <div class="inner-wrapper grid-3">
             <article>

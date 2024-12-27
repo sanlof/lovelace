@@ -33,10 +33,7 @@
 
 <body>
     <nav id="menu" class="menu">
-        <a href="../index.php">Home</a>
-        <a href="../pages/food.php">Restaurant</a>
-        <a href="../pages/treats.php">Experiences</a>
-        <a href="../pages/rooms.php">Rooms & Booking</a>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/includes/menu.php'); ?>
     </nav>
     <header>
         <section id="top">

@@ -86,19 +86,22 @@ a.cta {
     padding: var(--inner-padding);
 }
 
-nav#menu { 
-    opacity: 0; /* initialt tills man klickar på meny-knappen */
-    visibility: hidden;
-    width: 100vw;
-    max-height: 0;
+nav#menu,
+nav#foot-menu {
     background: var(--secondary-dark);
     color: var(--secondary-accent);
-    transition: 1s ease-in-out;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     gap: calc(var(--gap) * 2);
     font: .85em var(--heading-font);
+}
+nav#menu { 
+    opacity: 0; /* initialt tills man klickar på meny-knappen */
+    visibility: hidden;
+    width: 100vw;
+    max-height: 0;
+    transition: 1s ease-in-out;
 
     &.show { 
         opacity: 1;
@@ -107,10 +110,16 @@ nav#menu {
         transition: 1s ease-in-out; 
         padding: var(--inner-padding);
     }
-
-    a:hover {
-        color: var(--primary-light);
-    }
+}
+nav#foot-menu {
+    padding: var(--inner-padding); 
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: .15rem;
+    font-size: .75em;
+}
+nav a:hover {
+    color: var(--primary-light);
 }
 
 header {
