@@ -78,6 +78,12 @@ a.cta,
 }
 a.cta {
     margin-top: var(--gap);
+    transition: 1s;
+}
+a.cta:hover {
+    border-color: var(--primary-accent);
+    background: var(--primary-accent-20);
+    transition: .3s;
 }
 
 .inner-wrapper {
@@ -428,7 +434,6 @@ footer {
         padding: var(--inner-padding);
 
         &#features {
-            background-color: var(--primary-dark);
             position: relative;
             color: var(--primary-light-60);
             padding: var(--article-padding) var(--inner-padding);
@@ -464,7 +469,7 @@ footer {
                     object-position: center;
                     height: 100%;
                     width: 100%;
-                    opacity: .4;
+                    opacity: .3;
                     z-index: 1;
                 }
             }
