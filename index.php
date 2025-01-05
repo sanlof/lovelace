@@ -53,36 +53,7 @@
     </article>
     <article id="reviews">
         <div class="inner-wrapper grid-3">
-            <section>
-                <div>
-                    <p>&starf; &starf; &starf; &starf; &star;</p>
-                    <p>The blood-bags in this establishment are delicious. However, one will do best to keep their fairies close at all times.</p>
-                </div>
-                <div>
-                    <img src="https://images4.fanpop.com/image/photos/15800000/eric-northman-eric-northman-15837818-1024-576.jpg" alt="" />
-                    <strong>Eric Northman</strong>
-                </div>
-            </section>
-            <section>
-                <div>
-                    <p>&starf; &starf; &starf; &starf; &starf;</p>
-                    <p>I love the stylish and vintage feel of this place, and the virgin blood baths make my skin glow like nothing else!</p>
-                </div>
-                <div>
-                    <img src="https://images6.fanpop.com/image/polls/1504000/1504630_1440706923085_full.jpg?v=1440707021" alt="" />
-                    <strong>Countess Elizabeth</strong>
-                </div>
-            </section>
-            <section>
-                <div>
-                    <p>&starf; &starf; &starf; &starf; &starf;</p>
-                    <p>The South Tower is my favourite thing. I don't care too much for the sun, but those meetings truly light up my immortal life.</p>
-                </div>
-                <div>
-                    <img src="https://i.pinimg.com/originals/04/32/60/043260901819dbfde5d83cda695c2ba1.jpg" alt="" />
-                    <strong>Claudia</strong>
-                </div>
-            </section>
+            <?php require_once('includes/reviews.php'); ?>
         </div>
     </article>
     <article class="basic">
