@@ -1,7 +1,10 @@
 <?php require_once(__DIR__ . '/templates/header.php'); ?>
 
-<section class="hero" id="hero"></section>
-<a href="#intro" class="cta">Enter</a>
+<section class="hero" id="hero-exp">
+    <h1>Rediscover<br />the Light</h1>
+    <img src="../assets/images/castle.jpeg" alt="" />
+</section>
+<a href="#intro" class="cta">Explore</a>
 </header>
 <main>
     <article class="basic" id="intro">
@@ -9,7 +12,7 @@
             <section>
                 <h3>The Lovelace Hotel</h3>
                 <h2>Experience the Magic of Sunrise and Sunset Once More</h2>
-                <p>The Lovelace Hotel is a one of a kind sanctuary for vampires of every kind. Unique windows that filter out harmful uv-light enables you to relive the magic of watching the sunrise, before you go to rest, as well as catch a glimpse of the sunset, when it’s time to rise again.</p>
+                <p>The Lovelace Hotel is a one of a kind sanctuary for vampires. Unique windows that filter out harmful uv-light enables you to relive the magic of watching the sunrise, before you go to rest, as well as catch a glimpse of the sunset, when it’s time to rise again.</p>
             </section>
             <section>
                 <img src="../assets/images/ada24.jpeg" alt="" />

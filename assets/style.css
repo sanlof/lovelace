@@ -124,6 +124,9 @@ nav#foot-menu {
     letter-spacing: .15rem;
     font-size: .75em;
 }
+nav a {
+    transition: 1s;
+}
 nav a:hover {
     color: var(--primary-light);
 }
