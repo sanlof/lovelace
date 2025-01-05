@@ -22,7 +22,10 @@
             <img src=" ../assets/images/ada13.jpeg" class="bg" id="feats" alt="" />
         </div>
     </section>
-    <section>&copy; 2024 The Lovelace Hotel</section>
+    <section>
+        <p>&copy; 2024 The Lovelace Hotel</p>
+        <a href="#" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">Back to top ▲</a>
+    </section>
 </footer>
 <script src="../assets/script.js"></script>
 </body>

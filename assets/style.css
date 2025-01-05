@@ -475,6 +475,19 @@ footer {
             }
         }
     }
+    section:nth-of-type(2) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+            transition: 1s;
+        }
+        a:hover {
+            color: var(--primary-accent);
+            text-shadow: 0 0 10px var(--primary-accent);
+        }
+    }
 }
 
 /* calendars */
