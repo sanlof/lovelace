@@ -37,14 +37,14 @@
             <img src="../assets/images/stake3.jpeg" alt="" />
         </div>
     </article>
-    <article id="experiences">
+    <article id="gym">
         <div class="inner-wrapper flex">
             <section>
                 <h3>Fitness</h3>
                 <h2>Muscle Dungeon</h2>
                 <p>Muscular and fit vampires often hit the gym in order to instill the fascade of keeping up their physique the human way. Going to a regular gym, though, means one has to hold back in order to not wake any suspicion. The Muscle Dungeon, however, have all the equipment a vampire could wish for and allows for a true strength test between real beasts.</p>
             </section>
-            <img src="../assets/images/gym3.jpeg" class="bg" id="gym" alt="" />
+            <img src="../assets/images/gym3.jpeg" class="bg" alt="" />
         </div>
     </article>
     <article class="basic">
@@ -77,7 +77,7 @@
             <img src="../assets/images/therapy2.jpeg" alt="" />
         </div>
     </article>
-    <article id="exp">
+    <article id="little-ones">
         <div class="inner-wrapper flex">
             <section>
                 <h3>Little Ones</h3>

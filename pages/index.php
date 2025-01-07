@@ -43,7 +43,7 @@
             <img src="../assets/images/restaurant8.jpeg" alt="" />
         </div>
     </article>
-    <article>
+    <article id="treats">
         <div class="inner-wrapper flex">
             <section>
                 <h3>Experiences</h3>
