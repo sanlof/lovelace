@@ -46,7 +46,7 @@ $room_id = $_POST['room'];
 $feature_details = [];
 foreach ($features as $feature_id) {
     $stmt = $db->prepare("SELECT name, base_price FROM features WHERE id = :feature_id");
-    $stmt->bindParam(':feature_id', $feature_id);
+    $stmt->bindParam(':feature_id', $feature_id, PDO::PARAM_INT);
     $stmt->execute();
     $feature_data = $stmt->fetch();
 
