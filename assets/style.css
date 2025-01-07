@@ -20,7 +20,7 @@
     --primary-light: #fff;
     --primary-light-10: rgba(225, 225, 225, .1);
     --primary-light-60: rgba(225, 225, 225, .6);
-    --primary-dark: #160301;
+    --primary-dark: #180100;
     --primary-dark-40: rgba(0, 0, 0, .4);
     --secondary-dark: #000A11; /*000A11*/
     --primary-accent: #922C0D;
@@ -194,6 +194,11 @@ header {
             &:first-line {
                 font-size: 6.4rem;
             }
+            
+            &.active {
+                transition: 4s ease-in-out;
+                opacity: 1;
+            }
         }
     
         img {
@@ -205,6 +210,16 @@ header {
             width: 100%;
             height: 100%;
             opacity: 0;
+            filter: saturate(1.7);
+
+            &.active {
+                opacity: .4; /* Make active image visible */
+            }
+        }
+
+        h1, h1.active,
+        img, img.active {
+            transition: 2s ease-in-out;
         }
     }
 
