@@ -121,7 +121,8 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <label for="feature-<?= $feature['id'] ?>" class="feature">
                             <input
                                 type="checkbox"
-                                name="feature"
+                                class="features"
+                                name="features[]"
                                 id="feature-<?= $feature['id'] ?>"
                                 value="<?= $feature['id']  ?>">
                             <span><?= $feature['name']; ?></span>
@@ -227,7 +228,7 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }); // slut på eventlistener för submit
 
     // uppdatera (change) totalcost dynamiskt beroende på vad som är markerat
-    document.querySelectorAll('input[name="room"], input[name="feature"], input[name="check-in"], input[name="check-out"], input[name="discountCode"]').forEach(input => {
+    document.querySelectorAll('input[name="room"], input.features, input[name="check-in"], input[name="check-out"], input[name="discountCode"]').forEach(input => {
         input.addEventListener('change', updateTotalCost);
     });
 
@@ -280,7 +281,7 @@ $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
         // lägg till ev kostnad för valda features
-        const selectedFeatures = document.querySelectorAll('input[name="feature"]:checked');
+        const selectedFeatures = document.querySelectorAll('input.features:checked');
         selectedFeatures.forEach(function(feature) {
             const featurePrice = parseFloat(document.querySelector(`#feature-${feature.value}-price`).innerText.replace('$', ''));
             totalCost += featurePrice;
