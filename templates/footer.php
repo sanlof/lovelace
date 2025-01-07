@@ -1,6 +1,6 @@
 <footer>
     <nav id="foot-menu" class="menu">
-        <?php include(__DIR__ . '/includes/menu.php'); ?>
+        <?php include(__DIR__ . '/../includes/menu.php'); ?>
     </nav>
     <section id="features">
         <div class="inner-wrapper grid-3">
