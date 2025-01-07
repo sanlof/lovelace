@@ -3,7 +3,7 @@
 $menuItems = [
     [
         'menuText' => 'Home',
-        'link' => '../index.php'
+        'link' => '../pages/index.php'
     ],
     [
         'menuText' => 'Rooms & Booking',
