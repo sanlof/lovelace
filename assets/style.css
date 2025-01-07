@@ -13,24 +13,26 @@
 
 
 :root {
+    /* fonts */
     --heading-font: 'gilda display', georgia, serif;
     --sub-heading-font: 'barlow condensed', arial, sans-serif;
     --text-font: 'barlow', arial, sans-serif;
 
-    --primary-light: #fff;
-    --primary-light-10: rgba(225, 225, 225, .1);
-    --primary-light-60: rgba(225, 225, 225, .6);
-    --primary-dark: #180100;
-    --primary-dark-40: rgba(0, 0, 0, .4);
-    --secondary-dark: #000A11; /*000A11*/
-    --primary-accent: #922C0D;
-    --primary-accent-80: rgba(146, 44, 13, 0.8);
-    --primary-accent-20: rgba(146, 44, 13, 0.2);
-    --secondary-accent: #376377;
-    --secondary-accent-50: rgba(55, 99, 119, .5);
+    /* colors */
+    --ghastly-pale: rgb(255, 255, 255, 1);
+    --ghastly-pale-10: rgb(255, 235, 209, .1);
+    --ghastly-pale-60: rgb(255, 235, 209, .6);
+    --bloody-black: #180100;
+    --bloody-black-40: rgba(0, 0, 0, .4);
+    --scarlet-red: rgba(146, 44, 13, 1);
+    --scarlet-red-80: rgba(146, 44, 13, 0.8);
+    --scarlet-red-20: rgba(146, 44, 13, 0.2);
     --deep-burgundy: rgb(74, 15, 13);
-    --rose-red: rgb(171, 69, 73);
+    --batwing-blue: #000A11;
+    --pale-batwing-blue: #376377;
+    --pale-batwing-blue-50: rgba(55, 99, 119, .5);
 
+    /* spacing */
     --inner-padding: 2.4rem;
     --article-padding: 9.6rem;
     --gap: 2.4rem;
@@ -48,8 +50,8 @@ html {
 }
 body {
     margin: 0;
-    background: var(--primary-dark);
-    color: var(--primary-light);
+    background: var(--bloody-black);
+    color: var(--ghastly-pale);
     font: 300 2rem var(--text-font);
     opacity: 0;
     transition: opacity 1s;
@@ -66,14 +68,14 @@ a {
 
 a.cta,
 [type=submit].cta {
-    border: 1px solid var(--primary-light);
+    border: 1px solid var(--ghastly-pale);
     background: transparent;
     font: 200 1.6rem var(--sub-heading-font);
     text-transform: uppercase;
     letter-spacing: .6rem;
     padding: 12px 24px;
     text-decoration: none;
-    color: var(--primary-light);
+    color: var(--ghastly-pale);
     display: inline-block;
 }
 a.cta {
@@ -81,8 +83,8 @@ a.cta {
     transition: 1s;
 }
 a.cta:hover {
-    border-color: var(--primary-accent);
-    background: var(--primary-accent-20);
+    border-color: var(--scarlet-red);
+    background: var(--scarlet-red-20);
     transition: .3s;
 }
 
@@ -94,8 +96,8 @@ a.cta:hover {
 
 nav#menu,
 nav#foot-menu {
-    background: var(--secondary-dark);
-    color: var(--secondary-accent);
+    background: var(--batwing-blue);
+    color: var(--pale-batwing-blue);
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -128,12 +130,12 @@ nav a {
     transition: 1s;
 }
 nav a:hover {
-    color: var(--primary-light);
+    color: var(--ghastly-pale);
 }
 
 header {
-    background: var(--primary-dark);
-    color: var(--primary-light);
+    background: var(--bloody-black);
+    color: var(--ghastly-pale);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -145,7 +147,7 @@ header {
 
     .cta {
         margin-top: -1.2rem;
-        background: var(--primary-accent-80);
+        background: var(--scarlet-red-80);
         border: none;
     }
 
@@ -187,7 +189,7 @@ header {
             font: normal 9.5rem var(--heading-font);
             text-transform: uppercase;
             letter-spacing: 1.2rem;
-            text-shadow: 1px 1px 2px var(--primary-dark-40);
+            text-shadow: 1px 1px 2px var(--bloody-black-40);
             transition: 4s ease-in-out;
             opacity: 0;
             
@@ -245,7 +247,7 @@ h2 {
 h3 {
     font: 2rem var(--sub-heading-font);
     text-transform: uppercase;
-    color: var(--primary-accent);
+    color: var(--scarlet-red);
     margin: 0 0 var(--gap);
 }
 h4 {
@@ -255,7 +257,7 @@ h4 {
 }
 main {
     p {
-        color: var(--primary-light-60);
+        color: var(--ghastly-pale-60);
         margin-bottom: var(--gap);
         line-height: 3.6rem;
     }
@@ -295,8 +297,8 @@ main {
                 }
             }
             img {
-                box-shadow: 0 0 10rem var(--primary-light-10);
-                border: 1px solid var(--primary-light-10);
+                box-shadow: 0 0 10rem var(--ghastly-pale-10);
+                border: 1px solid var(--ghastly-pale-10);
                 transition: 2s;
 
                 &:hover {
@@ -395,13 +397,13 @@ main {
                 background: var(--deep-burgundy);
                 padding: 24px;
                 text-align: left;
-                box-shadow: 0 0 10rem var(--primary-dark-40);
+                box-shadow: 0 0 10rem var(--bloody-black-40);
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
 
                 p:first-child, strong {
-                    color: var(--primary-accent);
+                    color: var(--scarlet-red);
                 }
 
                 img {
@@ -426,8 +428,8 @@ main {
     
 
 footer {
-    color: var(--secondary-accent);
-    background-color: var(--secondary-dark);
+    color: var(--pale-batwing-blue);
+    background-color: var(--batwing-blue);
 
     p {
         font-size: .9em;
@@ -439,7 +441,7 @@ footer {
 
         &#features {
             position: relative;
-            color: var(--primary-light-60);
+            color: var(--ghastly-pale-60);
             padding: var(--article-padding) var(--inner-padding);
 
             .grid-3 {
@@ -453,7 +455,7 @@ footer {
                     z-index: 2;
 
                     h3 {
-                        color: var(--primary-light);
+                        color: var(--ghastly-pale);
                         margin-bottom: var(--gap);
                     }
 
@@ -488,8 +490,8 @@ footer {
             transition: 1s;
         }
         a:hover {
-            color: var(--primary-accent);
-            text-shadow: 0 0 10px var(--primary-accent);
+            color: var(--scarlet-red);
+            text-shadow: 0 0 10px var(--scarlet-red);
         }
     }
 }
@@ -497,38 +499,38 @@ footer {
 /* calendars */
 
 table {
-    border: .15rem solid var(--secondary-accent);
-    background: var(--secondary-dark);
+    border: .15rem solid var(--pale-batwing-blue);
+    background: var(--batwing-blue);
     table-layout: fixed;
     margin-bottom: var(--gap);
     border-collapse: collapse;
     width: 100%;
-    color: var(--primary-light-60);
+    color: var(--ghastly-pale-60);
 }
 table th,
 table td {
     padding: 1.6rem 0;
     font-size: .8em;
-    border: 1px solid var(--primary-light-10);
+    border: 1px solid var(--ghastly-pale-10);
 }
 table thead th {
-    background-color:  var(--secondary-accent-50);
+    background-color:  var(--pale-batwing-blue-50);
 }
 .booked {
     background: url('../assets/images/icons/booked.svg') center no-repeat;
     background-size: 100%;
 }
 .available {
-    /* color: var(--primary-light); */
+    /* color: var(--ghastly-pale); */
 }
 
 /* booking form */
 
 form {
-    color: var(--primary-light-60);
+    color: var(--ghastly-pale-60);
     padding: calc(var(--inner-padding) * 2);
-    border: 10px double var(--primary-light-10);
-    background: var(--primary-light-10);
+    border: 10px double var(--ghastly-pale-10);
+    background: var(--ghastly-pale-10);
     
     section {
         padding: var(--inner-padding) 0;
@@ -558,11 +560,11 @@ form {
     }
     input[type=radio]:checked ~ span,
     input[type=checkbox]:checked ~ span {
-        color: var(--primary-light);
+        color: var(--ghastly-pale);
     }
     input {
-        background: var(--primary-light-10);
-        color: var(--primary-light);
+        background: var(--ghastly-pale-10);
+        color: var(--ghastly-pale);
         font: inherit;
         border: none;
         padding: 1.1rem 1.2rem;
@@ -585,9 +587,9 @@ form {
 
         p {
             align-self: end;
-            border: 1px solid var(--primary-accent);
-            background: var(--primary-accent-20);
-            color: var(--primary-accent);
+            border: 1px solid var(--scarlet-red);
+            background: var(--scarlet-red-20);
+            color: var(--scarlet-red);
             padding: var(--inner-padding);
             font-weight: bold;
             margin: 0;
