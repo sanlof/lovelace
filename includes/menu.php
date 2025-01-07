@@ -1,6 +1,6 @@
 <?php
 
-$menuItems2 = [
+$menuItems = [
     [
         'menuText' => 'Home',
         'link' => '../index.php'
@@ -19,8 +19,8 @@ $menuItems2 = [
     ]
 ];
 
-foreach ($menuItems2 as $menuItem2): ?>
+foreach ($menuItems as $menuItem): ?>
 
-    <a href="<?= $menuItem2['link']; ?>"><?= $menuItem2['menuText']; ?></a>
+    <a href="<?= $menuItem['link']; ?>"><?= $menuItem['menuText']; ?></a>
 
 <?php endforeach; ?>
