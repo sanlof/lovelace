@@ -33,7 +33,7 @@
 
 <body>
     <nav id="menu" class="menu">
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/includes/menu.php'); ?>
+        <?php include(__DIR__ . '/../includes/menu.php'); ?>
     </nav>
     <header>
         <section id="top">
