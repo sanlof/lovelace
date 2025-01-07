@@ -274,7 +274,7 @@ main article .grid section h3,
 main article .grid section p {
     grid-column: 1 / 6;
 }
-main article img {    
+main article .grid img {    
     box-shadow: 0 0 10rem var(--ghastly-pale-10);
     border: 1px solid var(--ghastly-pale-10);
     transition: 2s;
