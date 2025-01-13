@@ -1,4 +1,22 @@
 # 🩸 The Lovelace Hotel
+
+Code Review
+
+booking.php:6 Kan lägga till error_log så kan man även se felmeddelandet i terminalen om det inte endast är för användaren.
+
+booking.php:20-27 Koden konverterar till rätt format, men hindrar inte användaren från att skriva in ett korrekt datum men fel "datum", t.ex år 2005? Kollar endast om check-out är senare än check-in, alltså inte endast januari 2025?
+
+style.css: Möjligen använda sig utav flera olika css filer istället för uppdelning och tydlighet?
+
+calendar.php:12 Kan lägga till where check_in och check_out i SQL direkt för att kunna hämta hem valda direkt istället för att behöva hämta alla?
+
+5 script.js 118-122: Använda sig av || istället för && för att kolla ifall Alla fält måste vara ifyllda. Nu kollar endast antingen eller?
+
+6 Genrellt båda i calendar och booking.php. Kan använda sig utav felmeddalande även när kör sql ifall något blir fel.  Ex: med try catch(PDOException $fel) osv
+
+7 booking.php: 31 , istället för flera separata variabler $feature1, $feature2 och $feature3,  kan använda array_map på hela Array direkt.
+
+
 This is/was a student project. The task was to create a fictive hotel website using the web development concepts learned so far, as well as an exercise in using Git and GitHub. 
 
 **The project was built according to the following instructions:**
